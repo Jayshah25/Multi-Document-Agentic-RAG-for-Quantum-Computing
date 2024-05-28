@@ -21,7 +21,7 @@ nest_asyncio.apply()
 FOLDER_PATH = 'data'
 
 st.subheader(':robot_face: Multi-Document Agentic RAG for Quantum Computing')
-st.caption("Created by [Jay Shah]('https://www.linkedin.com/in/jay-shah-qml/') with :heart:")
+st.caption("Created by [Jay Shah](https://www.linkedin.com/in/jay-shah-qml) with :heart:")
 
 
 with st.sidebar:
