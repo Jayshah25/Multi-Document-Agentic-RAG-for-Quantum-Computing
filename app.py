@@ -1,6 +1,6 @@
 
 # imports
-from llama_index.core import download_loader, Settings
+from llama_index.core import download_loader
 from llama_index.core.agent import FunctionCallingAgentWorker, AgentRunner
 from llama_index.llms.openai import OpenAI
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
@@ -33,7 +33,7 @@ with st.sidebar:
         expander.write(file)
 
     # get OPENAI_API_KEY
-    OPENAI_API_KEY = st.text_input("OPENAPI KEY", key="chatbot_api_key", type="password")
+    OPENAI_API_KEY = st.text_input("OPENAI API KEY", key="chatbot_api_key", type="password")
     if OPENAI_API_KEY:
         openai.api_key = OPENAI_API_KEY
     
@@ -51,7 +51,7 @@ if OPENAI_API_KEY:
     if "tools_loaded" not in st.session_state:
         try:
             # load openai model
-            model = OpenAI()
+            model = OpenAI(model="gpt-3.5-turbo")
 
             # get path to jupyter notebooks
             doc_paths = {
